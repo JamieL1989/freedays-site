@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="The FreeDays privacy policy: what the app stores, who processes it, how it is protected, and how to delete it.">
+  <title>FreeDays — Privacy Policy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="brand">FreeDays</p>
+    </header>
+
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated 2 July 2026</p>
+
+    <p>FreeDays is a mobile app for sharing your free time with friends and turning
+    overlapping availability into plans. This page explains, in plain English, what
+    data FreeDays stores, who processes it, how it is protected, and how to delete it.</p>
+
+    <h2>What we store</h2>
+    <p>FreeDays stores only what the app needs to work. It falls into four groups:</p>
+
+    <h3>Account &amp; profile</h3>
+    <ul>
+      <li>Your sign-in details: email address and password (managed by Supabase authentication).</li>
+      <li>Your full name and username.</li>
+      <li>Your profile bio, if you write one (up to 280 characters).</li>
+      <li>Your default timezone, used to show times correctly.</li>
+      <li>Your avatar photo, if you set one — stored in a private storage bucket that only you and your friends can read.</li>
+    </ul>
+
+    <h3>Social graph</h3>
+    <ul>
+      <li>Friend requests you send or receive, including their status (pending, accepted, or declined).</li>
+      <li>Your friendships — who you are friends with.</li>
+      <li>Friend invite links you create: tokens tied to your account, with their expiry and whether you have revoked them.</li>
+      <li>Circles — the friend groups you name and the friends you put in them. Your circles are private to you.</li>
+    </ul>
+
+    <h3>Availability &amp; plans</h3>
+    <ul>
+      <li>Your free-time slots: their start and end times, plus the timezone you created them in.</li>
+      <li>Your live &ldquo;free now&rdquo; status: a time-limited broadcast visible to your friends, with an optional short message (up to 140 characters).</li>
+      <li>Plans: their title, description, time, and location.</li>
+      <li>Each participant's status on a plan (invited, accepted, or declined).</li>
+      <li>Messages posted in a plan, and emoji reactions on those messages.</li>
+    </ul>
+
+    <h3>Notifications &amp; device</h3>
+    <ul>
+      <li>Your notification preferences — which kinds of notification you have switched on or off.</li>
+      <li>Your device's push token, used to deliver push notifications to your phone.</li>
+    </ul>
+
+    <h2>Who processes your data</h2>
+    <ul>
+      <li><strong>Supabase</strong> hosts our backend: the database that holds the data
+      listed above, the storage bucket that holds avatar photos, and the authentication
+      service that manages sign-in.</li>
+      <li><strong>Expo</strong> delivers push notifications: your device push token and
+      the content of each notification pass through Expo's push service. The app also
+      checks Expo's update service for app updates.</li>
+    </ul>
+    <p>Those are the only two services that process FreeDays data.</p>
+
+    <h2>How your data is protected</h2>
+    <ul>
+      <li>Everything in the database is guarded by row-level security, so only you and
+      your accepted friends can see what is shared with them.</li>
+      <li>Your session is stored on your device, in the operating system's secure storage.</li>
+      <li>No ads.</li>
+      <li>No analytics SDKs.</li>
+      <li>No contact-list upload — FreeDays never asks for or reads your phone's contacts.</li>
+      <li>We never sell your data.</li>
+    </ul>
+
+    <h2>Deleting your account</h2>
+    <p>You can delete your account at any time from inside the app: open
+    <strong>Profile&nbsp;&gt;&nbsp;Delete account</strong>. Deleting your account removes
+    your account and all of the data described above from our database immediately.
+    Avatar image files are removed on a short delay — a fix to remove them immediately
+    is in progress.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy or your data? Email
+    <a href="mailto:jamie.lyons1989@hotmail.com">jamie.lyons1989@hotmail.com</a>.</p>
+
+    <footer>
+      <p>FreeDays &middot; <a href="index.html">Support</a> &middot;
+      <a href="mailto:jamie.lyons1989@hotmail.com">Contact</a></p>
+    </footer>
+  </main>
+</body>
+</html>
