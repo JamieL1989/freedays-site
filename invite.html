@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="You've been invited to FreeDays — share your free time with friends and turn overlaps into plans.">
+  <title>FreeDays — You're invited</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .cta {
+      display: inline-block;
+      margin: 0.4rem 0;
+      padding: 0.85rem 1.6rem;
+      border-radius: 9999px;
+      background: #047857;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .cta.secondary { background: transparent; color: #047857; border: 1px solid #047857; }
+    .muted { color: #64748b; font-size: 0.95rem; }
+    @media (prefers-color-scheme: dark) {
+      .cta.secondary { color: #34d399; border-color: #34d399; }
+      .muted { color: #94a3b8; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header><p class="brand">FreeDays</p></header>
+
+    <h1>You're invited to FreeDays</h1>
+    <p>A friend wants to share their free time with you. FreeDays shows when you're
+    both free at the same time — so you can make plans without the back-and-forth.</p>
+
+    <p id="haveApp">
+      <a class="cta" id="openApp" href="#">Open in FreeDays</a>
+    </p>
+    <p id="getApp">
+      <a class="cta secondary" id="storeLink" href="https://apps.apple.com/app/id6786685654">Get FreeDays on the App Store</a>
+    </p>
+
+    <p class="muted" id="hint">Already have the app? Tap <strong>Open in FreeDays</strong>.
+    New here? Install it, then tap this link again to connect with your friend.</p>
+
+    <p class="muted" id="badToken" hidden>This invite link looks incomplete — ask your friend to send it again.</p>
+
+    <footer>
+      <p><a href="index.html">About FreeDays</a> &middot; <a href="privacy.html">Privacy</a></p>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var token = new URLSearchParams(location.search).get("t");
+      if (!token) {
+        document.getElementById("haveApp").hidden = true;
+        document.getElementById("hint").hidden = true;
+        document.getElementById("badToken").hidden = false;
+        return;
+      }
+      // The app registers the freedays:// scheme; this opens it straight to the
+      // invite (friends/confirm) for anyone who already has FreeDays installed.
+      var deepLink = "freedays://invite/" + encodeURIComponent(token);
+      document.getElementById("openApp").setAttribute("href", deepLink);
+      // Best-effort auto-open for installed users; harmless no-op if the app
+      // isn't installed (the App Store button stays visible below).
+      setTimeout(function () { window.location.href = deepLink; }, 400);
+    })();
+  </script>
+</body>
+</html>
